@@ -6,6 +6,7 @@ engine = create_engine("sqlite:///./todo.db")
 
 Base = declarative_base()
 
+
 SessionLocal = sessionmaker(bind=engine, autoflush=False)
 
 db = SessionLocal()
