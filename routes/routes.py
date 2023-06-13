@@ -11,6 +11,6 @@ api_router.add_api_route(path="/todos/{id}", endpoint=delete_todo, methods=["DEL
 
 api_router.add_api_route(path="/todos/{id}", endpoint=edit_todo, methods=["PATCH"])
 
-api_router.add_api_route(path="/todos", endpoint=delete_all, methods=["DELETE"])
+api_router.add_api_route(path="/todos/DeleteAll", endpoint=delete_all, methods=["DELETE"])
 
-api_router.add_api_route(path="/todos", endpoint=complete_all, methods=["PATCH"])
+api_router.add_api_route(path="/todos/CompleteAll", endpoint=complete_all, methods=["PUT"])

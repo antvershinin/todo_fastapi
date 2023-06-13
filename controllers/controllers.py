@@ -17,8 +17,6 @@ def add_todo(body:Todo_add):
 
 def delete_todo(id):
     todo = db.query(Todo).get(id)
-    if not todo:
-        return "Todo not found"
     db.delete(todo)
     db.commit()
     db.close()
@@ -26,8 +24,6 @@ def delete_todo(id):
 
 def edit_todo(id: int, body: Todo_edit):
     todo = db.query(Todo).get(id)
-    if not todo:
-        return "Todo not found"
     todo.text = body.text
     todo.completed = body.completed
     db.commit()
@@ -36,8 +32,7 @@ def edit_todo(id: int, body: Todo_edit):
     return todo
 
 def delete_all():
-    db.query(Todo).delete()
-    todos = db.query(Todo).all()
+    todos = db.query(Todo).delete()
     db.commit()
     db.close() 
     return todos
